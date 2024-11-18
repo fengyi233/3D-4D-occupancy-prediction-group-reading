@@ -51,7 +51,7 @@ Pioneering work of 3d occ pred.
 
 
 ### Framework Structure
-![](https://s3.hedgedoc.org/hd1-demo/uploads/ac81cc66-f3d5-4e3f-bc88-fa448d594733.png)
+![](figs/monoscene-1.png)
 
 RGB $\Rightarrow$ **EfficientNetB7** $\Rightarrow$ 2D features  $\Rightarrow$ **FLoSP** $\Rightarrow$ 3D features $\Rightarrow$ **3D UNet (inner: 3D CRP)** $\Rightarrow$ completion head $\Rightarrow$ semantic occupancy.
 
@@ -59,15 +59,15 @@ RGB $\Rightarrow$ **EfficientNetB7** $\Rightarrow$ 2D features  $\Rightarrow$ **
 
 #### Features Line of Sight Projection (FLoSP)
 Lifting 2D features to 3D.
-![](https://s3.hedgedoc.org/hd1-demo/uploads/285950e3-bf04-495a-b470-b2da40d870d9.png)
+![](figs/monoscene-2.png)
 
 
-#### Features Line of Sight Projection (FLoSP)
+#### 3D Context Relation Prior (3D CRP)
 Not important. 
 
 #### Losses
 1. Scene-Class Affinity Loss
-![](https://s3.hedgedoc.org/hd1-demo/uploads/d6801a75-7c63-46b7-8397-f480c5f38294.png)
+![](figs/monoscene-3.png)
 
 
 ### Experiments
