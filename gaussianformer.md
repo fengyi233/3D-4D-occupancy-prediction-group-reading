@@ -13,7 +13,7 @@
 - Although planar representations are resource-friendly, they could cause a loss of details. The grid-based methods can hardly adapt to regions of interest for different scenes and thus lead to representation and computation redundancy.
 
 ### Framework Structure
-![](figs/gaussianformer-1.png)
+![](images/gaussianformer-1.png)
 
 
 ### Methodology
