@@ -82,7 +82,6 @@ mIoU for semantic scene completion
 
 
 #### Performances
-![](https://s3.hedgedoc.org/hd1-demo/uploads/8dee4752-7c0d-4d5f-a7a7-05f0b93c8084.png)
 
 ---
 ## SurroundOcc: Multi-Camera 3D Occupancy Prediction for Autonomous Driving
@@ -111,7 +110,7 @@ flexible to extend to other 3D downstream tasks
 
 
 ### Framework Structure
-![](https://s3.hedgedoc.org/hd1-demo/uploads/6f59f26e-1a2c-4a43-a2da-268ab739c770.png)
+![](figs/surroundocc-1.png)
 
 
 
@@ -120,10 +119,65 @@ Implementation details of contributions. Description of novel ideas.
 
 
 ### Experiments
+#### Performances
+SemanticKITTI test set:
+- IoU: 34.72 
+- MIoU: 11.86
+
+nuScenes validation set:
+- IoU: 31.49 
+- MIoU: 20.30
+
+---
+
+
+## GaussianFormer: Scene as Gaussians for Vision-Based 3D Semantic Occupancy Prediction
+### Abstract
+- the **first object-centric representation** for 3D semantic occupancy prediction
+- supervised
+- comparable performance but drastically reduced memory consumption
+- 
+
+
+### Motivation
+- Grid-based methods inevitably suffer from the redundancy of **empty grids**, resulting in more complexity for downstream tasks.
+- It is also more difficult to capture **scene dynamics** with grid-based representations since it is objects instead of grids that move in the 3D space
+- Dense voxel representation neglects this diversity and processes every 3D location with equal storage and computation resources, which often leads to intractable overhead because of unreasonable resource allocation.
+- Although planar representations are resource-friendly, they could cause a loss of details. The grid-based methods can hardly adapt to regions of interest for different scenes and thus lead to representation and computation redundancy.
+
+### Framework Structure
+![](figs/gaussianformer-1.png)
+
+
+### Methodology
+#### Object-centric 3D Scene Representation
+- Object-centric 3D representation for 3D semantic occupancy prediction: each unit describes a region of interest instead of fixed grids. 
+- Construct semantic Gaussians using: **mean, scale, rotation vectors and semantic logits**
+- Generating semantics from a gaussian:
+$$g(p; m, s, r, c) = \exp (−\frac{1}{2}(p − m)^T\sum^{-1}(p − m))c$$
+- Generating occupancy from a gaussian:
+$$\hat{o}(p;\mathcal{G}) = \sum_i g_i((p; m_i, s_i, r_i, c_i))$$
+$\mathcal{G}$: a set of 3d gaussians\
+$p$: coordinates of a 3d point
+
+#### GaussianFormer: Image to Gaussians
+
+#### Gaussian-to-Voxel Splatting
+
+
+
+
+
+
+
+
+### Experiments
 #### Metrics
 #### Datasets
 #### Performances
 
 Metrics and Datasets can be ommitted if former papers have already clarified. 
+
+
 
 ---
