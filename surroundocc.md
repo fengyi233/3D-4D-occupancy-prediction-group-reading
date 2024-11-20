@@ -28,12 +28,13 @@
 
 Implementation details of contributions. Description of novel ideas. 
 
+
 ### Experiments
-
-#### Metrics
-
-#### Datasets
-
 #### Performances
+SemanticKITTI test set:
+- IoU: 34.72 
+- MIoU: 11.86
 
-Metrics and Datasets can be ommitted if former papers have already clarified. 
+nuScenes validation set:
+- IoU: 31.49 
+- MIoU: 20.30
