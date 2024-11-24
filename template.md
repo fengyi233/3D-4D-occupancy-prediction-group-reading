@@ -21,10 +21,21 @@ Implementation details of contributions. Description of novel ideas.
 
 ### Experiments
 
-#### Metrics
+If the paper introduces new datasets or metrics, please update the [datasets_metrics.md](datasets_metrics.md).
 
-#### Datasets
+provide the experimental results like:
 
-#### Performances
+nuScenes validation set:
+- IoU: 29.83 
+- MIoU: 19.10
 
-Metrics and Datasets can be ommitted if former papers have already clarified. 
+xx xx set:
+- xx: xx 
+- xx: xx
+
+
+
+### Limitations
+Very important but not mandatory. 
+
+
