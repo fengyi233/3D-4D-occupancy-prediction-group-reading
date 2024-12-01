@@ -21,7 +21,7 @@
 - Object-centric 3D representation for 3D semantic occupancy prediction: each unit describes a region of interest instead of fixed grids. 
 - Construct semantic Gaussians using: **mean, scale, rotation vectors and semantic logits**
 - Generating semantics from a gaussian:
-$$g(p; m, s, r, c) = \exp (−\frac{1}{2}(p − m)^T\sum^{-1}(p − m))c$$
+$$g(p; m, s, r, c) = \exp (−\frac{1}{2}(p − m)^\top\sum_{-1}(p − m))c$$
 - Generating occupancy from a gaussian:
 $$\hat{o}(p;\mathcal{G}) = \sum_i g_i((p; m_i, s_i, r_i, c_i))$$
 $\mathcal{G}$: a set of 3d gaussians\
@@ -29,19 +29,23 @@ $p$: coordinates of a 3d point
 
 #### GaussianFormer: Image to Gaussians
 
-#### Gaussian-to-Voxel Splatting
-
-
-
+Iteratively refine the Gaussian properties within the B blocks of GaussianFormer. Each block consists of:
+- **self-encoding module:** enable interactions among 3D Gaussians; implemented by **sparse conv**
+- **image cross-attention module:** aggregate visual information
+- **refinement module:** rectify the properties of 3D Gaussians
 
 
 
 
 
 ### Experiments
-#### Metrics
-#### Datasets
 #### Performances
 
-Metrics and Datasets can be ommitted if former papers have already clarified. 
+nuScenes validation set:
+- IoU: 29.83 
+- MIoU: 19.10
+
+SSCBench-KITTI360 validation set:
+- IoU: 35.38 
+- MIoU: 12.92
 
